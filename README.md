@@ -31,7 +31,7 @@ Kadmiel/
 2. **Cloner le dépôt** :
 
    ```bash
-   git clone [URL_DU_DEPOT]
+   git clone https://github.com/MielDev/Kadmiel.git
    ```
 
 3. **Ouvrir le projet** :
