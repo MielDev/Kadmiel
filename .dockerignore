@@ -1,0 +1,13 @@
+.git
+.gitignore
+Dockerfile
+docker/
+README.md
+node_modules/
+.vscode/
+.idea/
+*.log
+*.swp
+*.swo
+.DS_Store
+*.sublime-*

@@ -1,11 +1,19 @@
 <?php
-// Activer l'affichage des erreurs pour le débogage
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST');
+header('Access-Control-Allow-Headers: Content-Type');
 
-// Fonction pour envoyer une réponse JSON
-function sendJsonResponse($status, $message, $data = []) {
-    header('Content-Type: application/json');
+// Désactiver l'affichage des erreurs en production
+ini_set('display_errors', 0);
+error_reporting(E_ALL);
+
+// Fonction pour nettoyer les données d'entrée
+function cleanInput($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
+    return $data;
     $response = [
         'status' => $status,
         'message' => $message
