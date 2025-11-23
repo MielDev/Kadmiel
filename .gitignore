@@ -1,0 +1,17 @@
+# Fichiers de configuration sensibles
+email-config.js
+
+# Dépendances
+node_modules/
+
+# Fichiers de configuration
+.env
+
+# Fichiers de débogage
+npm-debug.log*
+
+# Fichiers d'environnement
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

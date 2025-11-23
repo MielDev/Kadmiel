@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau message de contact - Portfolio Kadmiel</title>
+    <style>
+        /* Reset CSS */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f4f4f9;
+        }
+
+        /* Container principal */
+        .email-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+
+        /* En-tête */
+        .email-header {
+            background: linear-gradient(135deg, #4a6cf7 0%, #2541b2 100%);
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .logo {
+            max-width: 180px;
+            margin-bottom: 15px;
+        }
+
+        .header-title {
+            margin: 10px 0 0;
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .header-subtitle {
+            margin: 5px 0 0;
+            font-size: 16px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Contenu */
+        .email-content {
+            padding: 35px 40px;
+            color: #444444;
+        }
+
+        .greeting {
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .message-box {
+            background: #f8f9ff;
+            border-left: 4px solid #4a6cf7;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .message-box h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 18px;
+        }
+
+        /* Détails du message */
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 15px;
+        }
+
+        .details-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eaeaea;
+            vertical-align: top;
+        }
+
+        .details-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .label {
+            font-weight: 600;
+            color: #555555;
+            width: 120px;
+        }
+
+        /* Bouton */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            margin: 20px 0;
+            background: #4a6cf7;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #3a5bd9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 108, 247, 0.2);
+        }
+
+        /* Pied de page */
+        .email-footer {
+            background: #f8f9ff;
+            padding: 25px 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #666666;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .social-links {
+            margin: 15px 0;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin: 0 8px;
+            color: #4a6cf7;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .social-link:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #888888;
+        }
+
+        /* Responsive */
+        @media only screen and (max-width: 600px) {
+            .email-content {
+                padding: 25px 20px;
+            }
+
+            .details-table td {
+                display: block;
+                width: 100%;
+                padding: 8px 0;
+                border-bottom: none;
+            }
+
+            .label {
+                font-weight: 600;
+                margin-top: 10px;
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <!-- En-tête -->
+        <div class="email-header">
+            <div class="logo">
+                <!-- Remplacez par votre logo -->
+                <h1 style="margin:0;font-size:28px;color:white">Kadmiel Tognon</h1>
+            </div>
+            <h2 class="header-title">Nouveau message de contact</h2>
+            <p class="header-subtitle">Portfolio - Développeur Full Stack</p>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="email-content">
+            <div class="greeting">
+                <p>Bonjour,</p>
+                <p>Vous avez reçu un nouveau message via le formulaire de contact de votre portfolio :</p>
+            </div>
+
+            <table class="details-table">
+                <tr>
+                    <td class="label">Nom complet :</td>
+                    <td>{{name}}</td>
+                </tr>
+                <tr>
+                    <td class="label">Adresse email :</td>
+                    <td><a href="mailto:{{email}}" style="color: #4a6cf7; text-decoration: none;">{{email}}</a></td>
+                </tr>
+                <tr>
+                    <td class="label">Sujet :</td>
+                    <td><strong>{{subject}}</strong></td>
+                </tr>
+                <tr>
+                    <td class="label">Date d'envoi :</td>
+                    <td>{{date}}</td>
+                </tr>
+            </table>
+
+            <div class="message-box">
+                <h3>Message :</h3>
+                <div style="line-height: 1.7;">{{message}}</div>
+            </div>
+
+            <p style="margin: 25px 0 15px;">Pour répondre à ce message, vous pouvez simplement cliquer sur le bouton
+                ci-dessous ou répondre directement à cet email.</p>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="mailto:{{email}}?subject=RE: {{subject}}" class="btn">
+                    ✉ Répondre à {{name}}
+                </a>
+            </div>
+
+            <p style="margin: 30px 0 0;">Cordialement,<br>L'équipe de support</p>
+        </div>
+
+        <!-- Pied de page -->
+        <div class="email-footer">
+            <div class="social-links">
+                <a href="#" class="social-link">Portfolio</a> •
+                <a href="#" class="social-link">LinkedIn</a> •
+                <a href="#" class="social-link">GitHub</a>
+            </div>
+            <div class="copyright">
+                2025 Kadmiel Tognon. Tous droits réservés.
+            </div>
+            <div style="font-size:11px; color:#999; margin-top:10px;">
+                Ceci est un message automatique, merci de ne pas y répondre directement.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
